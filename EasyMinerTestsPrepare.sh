@@ -27,11 +27,16 @@ then
     echo "$infoPrefix Created folder with template test files in ./$testFilesFolder" >&1
 
     #replace apikeys variable in taurus test files
-    replaceVariable="__apiKeyValue__"
+    replaceTemplateVariableApi="__replaceApiKeyValue__"
+    replaceTemplateVariableTestName="__replaceTestName__"
     for filename in ${testFilesFolder}/*.jmx; do
         # filename returns whole path
         echo "$infoPrefix File $filename"
-        sed -i -- "s/${replaceVariable}/$apiKey/g" ${filename}
+        # replace api variable with
+        sed -i -- "s/${replaceTemplateVariableApi}/$apiKey/g" ${filename}
+        # set test name for taurus graph legend
+        # TODO: add file name
+        sed -i -- "s/${replaceTemplateVariableTestName}/\/datasource upload/g" ${filename}
     done
     echo "$infoPrefix Test files are prepared" >&1
     exit 0

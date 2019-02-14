@@ -31,7 +31,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="apiKey" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">__apiKeyValue__</stringProp>
+                <stringProp name="Argument.value">__replaceApiKeyValue__</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">apiKey</stringProp>
