@@ -15,7 +15,7 @@ apiKey=`curl -X POST --header "Content-Type: application/json" --header "Accept:
 \"name\": \"$email\",
 \"email\": \"$email\",
 \"password\": \"$pass\"
-}" "http://172.17.0.1:8894/easyminercenter/api/users" | grep apiKey | cut -d ':' -f 2 | sed 's/"//g; s/ //g'`
+}" $1 | grep apiKey | cut -d ':' -f 2 | sed 's/"//g; s/ //g'`
 
 if [[ -n "$apiKey" ]]
 then
