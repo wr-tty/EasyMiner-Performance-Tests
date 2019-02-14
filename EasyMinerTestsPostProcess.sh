@@ -6,7 +6,7 @@ errorPrefix="ERROR:"
 # rename testing folder to actual time
 testFolderInit="../EasyMinerTests/EasyMiner_test_jmx"
 finalFileName="$(date +%Y-%m-%d_%H-%M-%S)_EasyMiner_test_jmx"
-testFolderFinal="../EasyMinerTests/$finalFileName"
+testFolderFinal="../EasyMinerTests/finished-tests/$finalFileName"
 mkdir ${testFolderFinal}
 # validate last command result
 if [[ $? -gt 0 ]]
