@@ -22,7 +22,7 @@ then
     echo "$infoPrefix Response apiKey $apiKey" >&1
     #copy prepared test files to special folder
     testFilesFolder="../EasyMinerTests/EasyMiner_test_jmx"
-    cp -r ../EasyMinerTests/EasyMiner_test_template_jmx ./${testFilesFolder}/
+    cp -r ../EasyMinerTests/test-templates-jmx ./${testFilesFolder}/
     echo "$infoPrefix Created folder with template test files in ./$testFilesFolder" >&1
 
     #replace apikeys variable in taurus test files
