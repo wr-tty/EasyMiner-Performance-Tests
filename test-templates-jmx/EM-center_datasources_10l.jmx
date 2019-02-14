@@ -125,8 +125,8 @@
           <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
           <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
             <collectionProp name="HTTPFileArgs.files">
-              <elementProp name="../EasyMinerTests/testing-data/Sacramentorealestatetransactions_1000l.csv" elementType="HTTPFileArg">
-                <stringProp name="File.path">../EasyMinerTests/testing-data/Sacramentorealestatetransactions_1000l.csv</stringProp>
+              <elementProp name="../EasyMinerTests/testing-data/Sacramentorealestatetransactions_10l.csv" elementType="HTTPFileArg">
+                <stringProp name="File.path">../EasyMinerTests/testing-data/Sacramentorealestatetransactions_10l.csv</stringProp>
                 <stringProp name="File.paramname">file</stringProp>
                 <stringProp name="File.mimetype">text/plain</stringProp>
               </elementProp>

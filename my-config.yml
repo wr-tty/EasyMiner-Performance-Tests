@@ -4,7 +4,7 @@ settings:
 services:
 - module: shellexec
   prepare:
-  - head -n1001 ../EasyMinerTests/sacramento_data/Sacramentorealestatetransactions.csv > ../EasyMinerTests/sacramento_data/Sacramentorealestatetransactions_1000l.csv
+  - head -n1001 ../EasyMinerTests/testing-data/Sacramentorealestatetransactions.csv > ../EasyMinerTests/testing-data/Sacramentorealestatetransactions_1000l.csv
   - command: ../EasyMinerTests/EasyMinerTestsPrepare.sh http://172.17.0.1:8894/easyminercenter/api/users
   post-process:
   - command: ../EasyMinerTests/EasyMinerTestsPostProcess.sh
