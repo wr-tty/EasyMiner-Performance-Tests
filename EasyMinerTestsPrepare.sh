@@ -34,7 +34,7 @@ then
         sed -i -- "s/${replaceVariable}/$apiKey/g" ${filename}
     done
     echo "$infoPrefix Test files are prepared" >&1
-    exit 0apiKey
+    exit 0
 else
     echo "$errorPrefix Response apiKey is null. Is Easy Miner available? Did you try change email?" >&2
     exit 1
