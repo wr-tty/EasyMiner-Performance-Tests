@@ -17,20 +17,23 @@ apiKey=`curl -X POST --header "Content-Type: application/json" --header "Accept:
 \"password\": \"$pass\"
 }" $1 | grep apiKey | cut -d ':' -f 2 | sed 's/"//g; s/ //g'`
 
+# copy folder with test templates and replace variable with API key
 if [[ -n "$apiKey" ]]
 then
     echo "$infoPrefix Response apiKey $apiKey" >&1
     #copy prepared test files to special folder
-    testFilesFolder="../EasyMinerTests/EasyMiner_test_jmx"
+    testFilesFolder="../EasyMinerTests/prepared-running-tests"
     cp -r ../EasyMinerTests/test-templates-jmx ./${testFilesFolder}/
     echo "$infoPrefix Created folder with template test files in ./$testFilesFolder" >&1
 
     #replace apikeys variable in taurus test files
     replaceVariable="__apiKeyValue__"
-#    sed -i -- "s/$replaceVariable/$apiKey/g" $testFilesFolder/EM-center_datasources_10l.jmx
-#    sed -i -- "s/$replaceVariable/$apiKey/g" $testFilesFolder/EM-center_datasources_100l.jmx
-    sed -i -- "s/${replaceVariable}/$apiKey/g" ${testFilesFolder}/EM-center_datasources_1000l.jmx
-    echo "$infoPrefix Test files are ready for run" >&1
+    for filename in ${testFilesFolder}/*.jmx; do
+        # filename returns whole path
+        echo "$infoPrefix File $filename"
+        sed -i -- "s/${replaceVariable}/$apiKey/g" ${filename}
+    done
+    echo "$infoPrefix Test files are prepared" >&1
     exit 0
 else
     echo "$errorPrefix Response apiKey is null. Is Easy Miner available? Did you try change email?" >&2

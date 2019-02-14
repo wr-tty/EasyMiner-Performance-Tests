@@ -4,8 +4,8 @@ infoPrefix="INFO:"
 errorPrefix="ERROR:"
 
 # rename testing folder to actual time
-testFolderInit="../EasyMinerTests/EasyMiner_test_jmx"
-finalFileName="$(date +%Y-%m-%d_%H-%M-%S)_EasyMiner_test_jmx"
+testFolderInit="../EasyMinerTests/prepared-running-tests"
+finalFileName="$(date +%Y-%m-%d_%H-%M-%S)"
 testFolderFinal="../EasyMinerTests/finished-tests/$finalFileName"
 mkdir ${testFolderFinal}
 # validate last command result

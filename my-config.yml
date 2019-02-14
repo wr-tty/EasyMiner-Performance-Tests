@@ -6,24 +6,12 @@ services:
   prepare:
   - head -n1001 ../EasyMinerTests/sacramento_data/Sacramentorealestatetransactions.csv > ../EasyMinerTests/sacramento_data/Sacramentorealestatetransactions_1000l.csv
   - command: ../EasyMinerTests/EasyMinerTestsPrepare.sh http://172.17.0.1:8894/easyminercenter/api/users
-    out:
-    err:
   post-process:
   - command: ../EasyMinerTests/EasyMinerTestsPostProcess.sh
-    out:
-    err:
-#- module: monitoring
-#  local:
-#  - interval: 2s   # polling interval
-#    metrics:
-#    - cpu
-#    - disk-space
-#    - mem
-#    - engine-loop
 
 reporting:
-- module: console
-- module: final-stats
+#- module: console
+#- module: final-stats
 - module: prometheus
 #- module: blazemeter
 #  report-name: Test-EM  # if you will use value 'ask', it will ask it from command line
@@ -32,7 +20,7 @@ reporting:
 
 scenarios:
   upload1000lines:
-    script: EasyMiner_test_jmx/EM-center_datasources_1000l.jmx
+    script: prepared-running-tests/EM-center_datasources_1000l.jmx
 
 # Runs items under execution sequential not parallel (default)
 modules:
