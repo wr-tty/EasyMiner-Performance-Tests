@@ -5,7 +5,7 @@ services:
 - module: shellexec
   prepare:
   - head -n1001 ../EasyMiner-Performance-Tests/testing-data/Sacramentorealestatetransactions.csv > ../EasyMiner-Performance-Tests/testing-data/Sacramentorealestatetransactions_1000l.csv
-  - command: ../EasyMiner-Performance-Tests/EasyMiner-Performance-TestsPrepare.sh http://easyminer-frontend:8894/easyminercenter/api/users
+  - command: ../EasyMiner-Performance-Tests/EasyMinerTestsPrepare.sh http://easyminer-frontend:8894/easyminercenter/api/users
   post-process:
   - command: ../EasyMiner-Performance-Tests/EasyMinerTestsPostProcess.sh
 
