@@ -38,8 +38,8 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">172.17.0.1</stringProp>
-          <stringProp name="HTTPSampler.port">8894</stringProp>
+          <stringProp name="HTTPSampler.domain">easyminer-frontend</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.connect_timeout"></stringProp>
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
