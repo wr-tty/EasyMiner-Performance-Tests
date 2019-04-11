@@ -1,13 +1,13 @@
 settings:
-  artifacts-dir: ../EasyMinerTests/artifacts/%Y-%m-%d_%H-%M-%S.%f
+  artifacts-dir: ../EasyMiner-Performance-Tests/artifacts/%Y-%m-%d_%H-%M-%S.%f
 
 services:
 - module: shellexec
   prepare:
-  - head -n1001 ../EasyMinerTests/testing-data/Sacramentorealestatetransactions.csv > ../EasyMinerTests/testing-data/Sacramentorealestatetransactions_1000l.csv
-  - command: ../EasyMinerTests/EasyMinerTestsPrepare.sh http://172.17.0.1:8894/easyminercenter/api/users
+  - head -n1001 ../EasyMiner-Performance-Tests/testing-data/Sacramentorealestatetransactions.csv > ../EasyMiner-Performance-Tests/testing-data/Sacramentorealestatetransactions_1000l.csv
+  - command: ../EasyMiner-Performance-Tests/EasyMiner-Performance-TestsPrepare.sh http://172.17.0.1:8894/easyminercenter/api/users
   post-process:
-  - command: ../EasyMinerTests/EasyMinerTestsPostProcess.sh
+  - command: ../EasyMiner-Performance-Tests/EasyMinerTestsPostProcess.sh
 
 reporting:
 #- module: console
@@ -20,7 +20,8 @@ reporting:
 
 scenarios:
   upload1000lines:
-    script: prepared-running-tests/EM-center_datasources_1000l.jmx
+#    script: prepared-running-tests/EM-center_datasources_1000l.jmx
+    script: prepared-running-tests/EM-short-test.jmx
 
 # Runs items under execution sequential not parallel (default)
 modules:
@@ -28,10 +29,10 @@ modules:
     sequential: true
   prometheus:
     port: 8008
-    send-interval: 1s
 
 execution:
-- concurrency: 1
+- concurrency: 5
+  ramp-up: 3m
 #  hold-for: 1m
-  iterations: 100
+  iterations: 20
   scenario: upload1000lines
