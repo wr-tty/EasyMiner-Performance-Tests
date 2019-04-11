@@ -22,8 +22,8 @@ if [[ -n "$apiKey" ]]
 then
     echo "$infoPrefix Response apiKey $apiKey" >&1
     #copy prepared test files to special folder
-    testFilesFolder="../EasyMinerTests/prepared-running-tests"
-    cp -r ../EasyMinerTests/test-templates-jmx ./${testFilesFolder}/
+    testFilesFolder="../EasyMiner-Performance-Tests/prepared-running-tests"
+    cp -r ../EasyMiner-Performance-Tests/test-templates-jmx ./${testFilesFolder}/
     echo "$infoPrefix Created folder with template test files in ./$testFilesFolder" >&1
 
     #replace apikeys variable in taurus test files
