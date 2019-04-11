@@ -7,7 +7,7 @@ errorPrefix="ERROR:"
 testFolderInit="../EasyMiner-Performance-Tests/prepared-running-tests"
 finalFileName="$(date +%Y-%m-%d_%H-%M-%S)"
 testFolderFinal="../EasyMiner-Performance-Tests/finished-tests/$finalFileName"
-mkdir ${testFolderFinal}
+mkdir -p ${testFolderFinal}
 # validate last command result
 if [[ $? -gt 0 ]]
 then
