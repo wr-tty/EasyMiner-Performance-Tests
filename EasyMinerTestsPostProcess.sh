@@ -21,5 +21,5 @@ if [[ $? -eq 0 ]]
 then
     echo "infoPrefix Folder \"$testFolderFinal\" renamed to $finalFileName." >&1
 fi
-sleep 20s
+
 exit 0
