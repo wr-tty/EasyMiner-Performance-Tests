@@ -38,8 +38,8 @@
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/datasources POST" enabled="true">
           <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
             <collectionProp name="HTTPFileArgs.files">
-              <elementProp name="../EasyMiner-Performance-Tests/testing-data/Sacramentorealestatetransactions_100l.csv" elementType="HTTPFileArg">
-                <stringProp name="File.path">../EasyMiner-Performance-Tests/testing-data/Sacramentorealestatetransactions_100l.csv</stringProp>
+              <elementProp name="../testing-data/Sacramentorealestatetransactions_100l.csv" elementType="HTTPFileArg">
+                <stringProp name="File.path">../testing-data/Sacramentorealestatetransactions_100l.csv</stringProp>
                 <stringProp name="File.paramname">file</stringProp>
                 <stringProp name="File.mimetype">text/plain</stringProp>
               </elementProp>
