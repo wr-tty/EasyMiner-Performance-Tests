@@ -23,8 +23,8 @@ then
 fi
 
 # dump log files
-cat /EasyMiner-Performance-Tests/artifacts/results/jmeter.log
-cat /EasyMiner-Performance-Tests/artifacts/results/error.jtl
-cat /EasyMiner-Performance-Tests/artifacts/results/bzt.log
+cat ../EasyMiner-Performance-Tests/artifacts/results/jmeter.log
+cat ../EasyMiner-Performance-Tests/artifacts/results/error.jtl
+cat ../EasyMiner-Performance-Tests/artifacts/results/bzt.log
 
 exit 0
