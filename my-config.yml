@@ -1,5 +1,6 @@
 settings:
-  artifacts-dir: ../EasyMiner-Performance-Tests/artifacts/%Y-%m-%d_%H-%M-%S.%f
+  artifacts-dir: ../EasyMiner-Performance-Tests/artifacts/results
+#  artifacts-dir: ../EasyMiner-Performance-Tests/artifacts/%Y-%m-%d_%H-%M-%S.%f
 
 services:
 - module: shellexec
@@ -32,7 +33,7 @@ modules:
 
 execution:
 - concurrency: 5
-  ramp-up: 3m
+  ramp-up: 30s
 #  hold-for: 1m
   iterations: 20
   scenario: upload1000lines
