@@ -20,7 +20,7 @@ reporting:
 #  project: EM
 
 scenarios:
-  upload100userDataPreprocesScenarion0lines:
+  userDataPreprocesScenarions:
 #    script: prepared-running-tests/EM-center_datasources_1000l.jmx
     script: prepared-running-tests/EM-short-test.jmx
 
