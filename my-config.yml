@@ -20,7 +20,7 @@ reporting:
 #  project: EM
 
 scenarios:
-  userDataPreprocesScenarions:
+  userDataPreprocessScenario:
 #    script: prepared-running-tests/EM-center_datasources_1000l.jmx
     script: prepared-running-tests/EM-short-test.jmx
 
@@ -35,5 +35,5 @@ execution:
 - concurrency: 1
 #  ramp-up: 30s
 #  hold-for: 1m
-  iterations: 20
-  scenario: userDataPreprocesScenarion
+  iterations: 50
+  scenario: userDataPreprocessScenario
