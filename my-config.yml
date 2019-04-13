@@ -5,7 +5,7 @@ settings:
 services:
 - module: shellexec
   prepare:
-  - head -n1001 ../EasyMiner-Performance-Tests/testing-data/Sacramentorealestatetransactions.csv > ../EasyMiner-Performance-Tests/testing-data/Sacramentorealestatetransactions_1000l.csv
+#  - head -n1001 ../EasyMiner-Performance-Tests/testing-data/Sacramentorealestatetransactions.csv > ../EasyMiner-Performance-Tests/testing-data/Sacramentorealestatetransactions_1000l.csv
   - command: ../EasyMiner-Performance-Tests/EasyMinerTestsPrepare.sh http://easyminer-frontend/easyminercenter/api/users
   post-process:
   - command: ../EasyMiner-Performance-Tests/EasyMinerTestsPostProcess.sh
@@ -20,7 +20,7 @@ reporting:
 #  project: EM
 
 scenarios:
-  upload1000lines:
+  upload100userDataPreprocesScenarion0lines:
 #    script: prepared-running-tests/EM-center_datasources_1000l.jmx
     script: prepared-running-tests/EM-short-test.jmx
 
@@ -32,8 +32,8 @@ modules:
     port: 8008
 
 execution:
-- concurrency: 5
-  ramp-up: 30s
+- concurrency: 1
+#  ramp-up: 30s
 #  hold-for: 1m
   iterations: 20
-  scenario: upload1000lines
+  scenario: userDataPreprocesScenarion
