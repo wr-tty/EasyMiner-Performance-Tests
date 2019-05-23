@@ -3,10 +3,13 @@
 infoPrefix="INFO:"
 errorPrefix="ERROR:"
 
+SCRIPT=$(readlink -f "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+
 # rename testing folder to actual time
-testFolderInit="../EasyMiner-Performance-Tests/prepared-running-tests"
+testFolderInit="$SCRIPTPATH/prepared-running-tests"
 finalFileName="$(date +%Y-%m-%d_%H-%M-%S)"
-testFolderFinal="../EasyMiner-Performance-Tests/finished-tests/$finalFileName"
+testFolderFinal="$SCRIPTPATH/finished-tests/$finalFileName"
 mkdir -p ${testFolderFinal}
 # validate last command result
 if [[ $? -gt 0 ]]

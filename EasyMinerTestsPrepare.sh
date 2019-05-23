@@ -3,6 +3,9 @@
 infoPrefix="INFO:"
 errorPrefix="ERROR:"
 
+SCRIPT=$(readlink -f "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+
 # generate random user for every test run
 randNumber=`shuf -i 1-1000 -n1`
 email="test$randNumber@easyminer.cz"
@@ -22,9 +25,10 @@ if [[ -n "$apiKey" ]]
 then
     echo "$infoPrefix Response apiKey $apiKey" >&1
     #copy prepared test files to special folder
-    testFilesFolder="../EasyMiner-Performance-Tests/prepared-running-tests"
-    cp -r ../EasyMiner-Performance-Tests/test-templates-jmx ./${testFilesFolder}/
-    echo "$infoPrefix Created folder with template test files in ./$testFilesFolder" >&1
+    testFilesFolder="${SCRIPTPATH}/prepared-running-tests"
+#    mkdir -p ${testFilesFolder}
+    cp -r ${SCRIPTPATH}/test-templates-jmx ${testFilesFolder}/
+    echo "$infoPrefix Created folder with template test files in $testFilesFolder" >&1
 
     #replace apikeys variable in taurus test files
     replaceTemplateVariableApi="__replaceApiKeyValue__"
