@@ -21,7 +21,6 @@ reporting:
 
 scenarios:
   userDataPreprocessScenario:
-#    script: prepared-running-tests/EM-center_datasources_1000l.jmx
     script: prepared-running-tests/EM-short-test.jmx
 
 # Runs items under execution sequential not parallel (default)

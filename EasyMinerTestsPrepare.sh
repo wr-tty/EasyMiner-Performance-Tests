@@ -33,6 +33,7 @@ then
     #replace apikeys variable in taurus test files
     replaceTemplateVariableApi="__replaceApiKeyValue__"
     replaceTemplateVariableTestName="__replaceTestName__"
+    replaceTemplateVariablePathToDataset="__replaceWithPathToDataset__"
     for filename in ${testFilesFolder}/*.jmx; do
         # filename returns whole path
         echo "$infoPrefix File $filename"
@@ -41,6 +42,8 @@ then
         # set test name for taurus graph legend
         # TODO: add file name
         sed -i -- "s/${replaceTemplateVariableTestName}/\/datasource upload/g" ${filename}
+        # add dataset path and naim from testing-data folder
+        sed -i -- "s/${replaceTemplateVariablePathToDataset}/\/$TAURUS_TEST_DATASET/g" ${filename}
     done
     echo "$infoPrefix Test files are prepared" >&1
     exit 0
